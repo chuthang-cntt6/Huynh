@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Blockchain - Home</title>
+    <link rel="stylesheet" href="style.css"> <!-- Liên kết tới tệp CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">Private Blockchain</div>
+    <div id="nav-links">
+        <a href="register.html"><i class="fas fa-user-plus"></i> Register</a>
+        <a href="#" id="login-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </div>
+</div>
+
+<!-- Tabs -->
+<div class="tab">
+    <div class="tab-item" data-target="#home">Home</div> 
+    <div class="tab-item" data-target="#transaction">Create Transaction</div>
+    <div class="tab-item" data-target="#transactionHistory">View Transaction History</div>
+    <div class="tab-item" data-target="#contract">Smart Contract</div>
+    <div class="tab-item" data-target="#log">Log Message</div>
+    <div class="tab-item" data-target="#blog">Blog</div>
+    <div class="tab-item" data-target="#faq">FAQ</div>
+</div>
+
+<!-- Main Container -->
+<div class="container">
+    <h1>Welcome to Private Blockchain</h1>
+    <div id="welcomeMessage" style="text-align: center; margin-bottom: 20px;"></div>
+
+    <!-- Form Sections -->
+     <!-- Home Section -->
+     <div class="form-section active" id="home">
+        <h2><i class="fas fa-home"></i> Home</h2>
+        <p>Welcome to the Private Blockchain platform! Our mission is to empower users with privacy and security in the blockchain world. Whether you are a developer, a business, or just curious about blockchain technology, you will find valuable resources and tools here.</p>
+        
+        <h3>What We Offer</h3>
+        <div class="offerings">
+            <div class="offering">
+                <i class="fas fa-exchange-alt"></i>
+                <h4>Create Transactions</h4>
+                <p>Easily create and manage transactions on our secure platform.</p>
+            </div>
+            <div class="offering">
+                <i class="fas fa-history"></i>
+                <h4>View Transaction History</h4>
+                <p>Access a comprehensive history of all your transactions.</p>
+            </div>
+            <div class="offering">
+                <i class="fas fa-file-contract"></i>
+                <h4>Deploy Smart Contracts</h4>
+                <p>Write and deploy smart contracts with ease.</p>
+            </div>
+            <div class="offering">
+                <i class="fas fa-clipboard-list"></i>
+                <h4>Log Messages</h4>
+                <p>Keep track of important messages and logs.</p>
+            </div>
+            <div class="offering">
+                <i class="fas fa-blog"></i>
+                <h4>Explore Our Blog</h4>
+                <p>Stay updated with the latest trends and insights in blockchain technology.</p>
+            </div>
+            <div class="offering">
+                <i class="fas fa-question-circle"></i>
+                <h4>Frequently Asked Questions</h4>
+                <p>Get answers to common questions about blockchain.</p>
+            </div>
+        </div>
+    
+        <h3>Watch Our Introduction Video</h3>
+        <div class="video-container">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/SSo_EIwHSd4" frameborder="0" allowfullscreen></iframe>
+        </div>
+    
+        <h3>Join Our Community</h3>
+        <p>Become a part of our growing community of blockchain enthusiasts. Share your knowledge, ask questions, and collaborate with others.</p>
+        <p>Feel free to navigate through the tabs above to explore all the features we offer!</p>
+    
+        <h3>Testimonials</h3>
+        <div class="testimonials">
+            <blockquote>
+                <p>"The Private Blockchain platform has transformed the way we handle transactions. The security and ease of use are unmatched!"</p>
+                <footer>- Alex Johnson, CEO of Tech Innovations</footer>
+            </blockquote>
+            <blockquote>
+                <p>"I love the community support and resources available here. It's a great place to learn and grow!"</p>
+                <footer>- Sarah Lee, Blockchain Developer</footer>
+            </blockquote>
+        </div>
+    
+        <h3>Upcoming Events</h3>
+        <ul class="events">
+            <li><strong>Blockchain Conference 2023</strong> - Join us for a day of learning and networking on March 15, 2023.</li>
+            <li><strong>Webinar: Introduction to Smart Contracts</strong> - Learn the basics on April 10, 2023.</li>
+            <li><strong>Meetup: Blockchain for Beginners</strong> - Connect with fellow enthusiasts on May 5, 2023.</li>
+        </ul>
+    
+        <h3>Resources</h3>
+        <p>Check out our curated list of resources to help you get started with blockchain technology:</p>
+        <ul class="resources">
+            <li><a href="#">Blockchain Basics: A Non-Technical Introduction</a></li>
+            <li><a href="#">Understanding Smart Contracts</a></li>
+            <li><a href="#">Top 10 Blockchain Use Cases</a></li>
+            <li><a href="#">Guide to Blockchain Security</a></li>
+        </ul>
+    </div>
+    <!-- Transaction Form -->
+    <div class="form-section " id="transaction">
+        <h2><i class="fas fa-exchange-alt"></i> Create Transaction</h2>
+        <form id="transactionForm">
+            <label for="sender">Sender</label>
+            <input type="text" id="sender" placeholder="Enter sender's address" required>
+            <label for="receiver">Receiver</label>
+            <input type="text" id="receiver" placeholder="Enter receiver's address" required>
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="Enter amount" required>
+            <button type="submit" class="btn-primary">Create Transaction</button>
+        </form>
+    </div>
+
+    <!-- Transaction History -->
+    <div class="form-section" id="transactionHistory">
+        <h2><i class="fas fa-history"></i> View Transaction History</h2>
+        <form id="historyForm">
+            <label for="blockNumberHistory">Block Number</label>
+            <input type="number" id="blockNumberHistory" placeholder="Enter Block Number" required>
+            <button type="submit" class="btn-primary">View Transactions</button>
+        </form>
+        <div id="transactionList" class="transaction-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sender</th>
+                        <th>Receiver</th>
+                        <th>Amount</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionBody">
+                    <!-- Transactions will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Smart Contract Form -->
+    <div class="form-section" id="contract">
+        <h2><i class="fas fa-file-contract"></i> Smart Contract</h2>
+        <form id="contractForm">
+            <label for="contractAddress">Contract Address</label>
+            <input type="text" id="contractAddress" placeholder="Enter Contract Address" required>
+            <label for="creatorId">Creator ID</label>
+            <input type="number" id="creatorId" placeholder="Enter Creator ID" required>
+            <label for="sourceCode">Smart Contract Source Code</label>
+            <textarea id="sourceCode" placeholder="Enter Smart Contract Source Code" required></textarea>
+            <button type="submit" class="btn-primary">Deploy Contract</button>
+        </form>
+    </div>
+
+    <!-- Log Message Form -->
+    <div class="form-section" id="log">
+        <h2><i class="fas fa-clipboard-list"></i> Log Message</h2>
+        <form id="logForm">
+            <label for="logLevel">Log Level</label>
+ <select id="logLevel" required>
+                <option value="info">Info</option>
+                <option value="warning">Warning</option>
+                <option value="error">Error</option>
+            </select>
+            <label for="logMessage">Log Message</label>
+            <textarea id="logMessage" placeholder="Enter Log Message" required></textarea>
+            <button type="submit" class="btn-primary">Log Message</button>
+        </form>
+    </div>
+
+    <!-- Blog Section -->
+<div class="form-section" id="blog">
+    <h2><i class="fas fa-blog"></i> Blog</h2>
+    <div class="blog-post">
+        <h3>Understanding Blockchain Technology</h3>
+        <p>Blockchain technology is a decentralized digital ledger that records transactions across many computers. This ensures that the recorded transactions cannot be altered retroactively, providing a secure and transparent way to conduct transactions.</p>
+    </div>
+    <div class="blog-post">
+        <h3>How to Create Your First Smart Contract</h3>
+        <p>Creating a smart contract involves writing code that defines the rules and conditions of the agreement. Smart contracts are executed on the blockchain, ensuring that they are tamper-proof and automatically enforced.</p>
+    </div>
+    <div class="blog-post">
+        <h3>The Future of Decentralized Finance (DeFi)</h3>
+        <p>Decentralized Finance (DeFi) is revolutionizing the financial industry by providing open access to financial services without intermediaries. This shift allows users to lend, borrow, and trade assets directly on the blockchain, creating a more inclusive financial ecosystem.</p>
+    </div>
+    <div class="blog-post">
+        <h3>Exploring the Use Cases of Blockchain Beyond Cryptocurrency</h3>
+        <p>Blockchain technology has applications beyond cryptocurrency, including supply chain management, healthcare, and voting systems. By providing transparency and traceability, blockchain can enhance trust and efficiency in various industries.</p>
+    </div>
+    <div class="blog-post">
+        <h3>Understanding Non-Fungible Tokens (NFTs)</h3>
+        <p>Non-Fungible Tokens (NFTs) are unique digital assets that represent ownership of a specific item or piece of content on the blockchain. They have gained popularity in the art world, gaming, and collectibles, allowing creators to monetize their work in new ways.</p>
+    </div>
+</div>
+
+<!-- FAQ Section -->
+<div class="form-section" id="faq">
+    <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <h3>What is Blockchain?</h3>
+        <p>Blockchain is a distributed ledger technology that allows multiple parties to have access to a shared database without the need for a central authority.</p>
+    </div>
+    <div class="faq-item">
+        <h3>How secure is Blockchain?</h3>
+        <p>Blockchain is considered secure due to its decentralized nature and cryptographic techniques that protect data integrity and prevent unauthorized access.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Can I create my own cryptocurrency?</h3>
+        <p>Yes, you can create your own cryptocurrency by defining its rules and deploying it on a blockchain platform that supports token creation.</p>
+    </div>
+    <div class="faq-item">
+        <h3>What are the benefits of using Blockchain?</h3>
+        <p>Blockchain offers several benefits, including enhanced security, transparency, and efficiency. Transactions are recorded in a tamper-proof manner, and all participants can access the same information, reducing the risk of fraud.</p>
+    </div>
+    <div class="faq-item">
+        <h3>How do I get started with Blockchain development?</h3>
+        <p>To get started with blockchain development, you can learn programming languages such as Solidity for Ethereum smart contracts, explore blockchain platforms, and participate in online courses or communities focused on blockchain technology.</p>
+    </div>
+    <div class="faq-item">
+        <h3>What is a consensus mechanism?</h3>
+        <p>A consensus mechanism is a protocol that ensures all nodes in a blockchain network agree on the validity of transactions. Common mechanisms include Proof of Work (PoW) and Proof of Stake (PoS), each with its own advantages and trade-offs.</p>
+    </div>
+</div> 
+</div>
+
+<div class="footer">
+    <div class="footer-top">
+        <div class="logo">
+            <h2>Private Blockchain</h2>
+            <p>Empowering privacy and security in the blockchain world.</p>
+        </div>
+        
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="about.html">About Us</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+
+        <div class="newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <p>Stay updated with the latest blockchain news and updates.</p>
+            <form id="newsletterForm">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2023 Private Blockchain. All rights reserved.</p>
+        <p>Email: <a href="mailto:chuthangzed@gmail.com">chuthangzed@gmail.com</a> | 
+        Phone: <a href="tel:+0792273898">0792273898</a></p>
+    </div>
+</div>
+
+<script>
+    // Lấy tên người dùng từ localStorage
+    const username = localStorage.getItem('username');
+    if (username) {
+        document.getElementById('welcomeMessage').innerText = `Hello, ${username}!`;
+        document.getElementById('login-link').innerHTML = '<i class="fas fa-sign-out-alt"></i> Logout';
+        document.getElementById('login-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+            localStorage.removeItem('username'); // Xóa thông tin người dùng
+            window.location.href = 'index.html'; // Chuyển hướng về trang chính
+        });
+    } else {
+        document.getElementById('welcomeMessage').innerText = 'Hello, Guest!';
+        document.getElementById('login-link').href = 'login.html'; // Liên kết đến trang đăng nhập
+    }
+
+    // Xử lý tab chuyển đổi
+    const tabItems = document.querySelectorAll('.tab-item');
+    const formSections = document.querySelectorAll('.form-section');
+
+    tabItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const target = item.getAttribute('data-target');
+
+            tabItems.forEach(i => i.classList.remove('active'));
+            formSections.forEach(section => section.classList.remove('active'));
+
+            item.classList.add('active');
+            document.querySelector(target).classList.add('active');
+        });
+    });
+
+    // Xử lý tạo giao dịch
+    document.getElementById('transactionForm').onsubmit = async (e) => {
+        e.preventDefault();
+        const sender = document.getElementById('sender').value;
+        const receiver = document.getElementById('receiver').value;
+        const amount = document.getElementById('amount').value;
+
+        try {
+            // Lấy block mới nhất
+            const lastBlockResponse = await fetch('/api/blocks/latest');
+            if (!lastBlockResponse.ok) throw new Error('Failed to fetch the latest block');
+
+            const lastBlockData = await lastBlockResponse.json();
+            const blockId = lastBlockData.block_number; // Lấy ID của block mới nhất
+
+            // Tạo giao dịch
+            const response = await fetch('/api/transactions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ blockId, sender, receiver, amount })
+            });
+
+            if (!response.ok) throw new Error('Failed to create a transaction');
+
+            const data = await response.json();
+            alert(data.message);
+        } catch (error) {
+            alert(error.message);
+        }
+    };
+
+    // Xử lý xem lịch sử giao dịch 
+    document.getElementById('historyForm').onsubmit = async (e) => {
+        e.preventDefault();
+        const blockNumber = document.getElementById('blockNumberHistory').value;
+
+        try {
+            const response = await fetch(`/api/blocks/${blockNumber}/transactions`);
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Failed to fetch transactions for this block');
+            }
+
+            const transactions = await response.json();
+            const transactionBody = document.getElementById('transactionBody');
+            transactionBody.innerHTML = ''; // Xóa danh sách cũ
+
+            if (transactions.length === 0) {
+                transactionBody.innerHTML = '<tr><td colspan="4" class="empty-message">No transactions found for this block.</td></tr>';
+                return;
+            }
+
+            transactions.forEach(transaction => {
+                const transactionRow = document.createElement('tr');
+                transactionRow.innerHTML = `
+                    <td>${transaction.sender}</td>
+                    <td>${transaction.receiver}</td>
+                    <td>${transaction.amount}</td>
+                    <td>${transaction.timestamp}</td>
+                `;
+                transactionBody.appendChild(transactionRow);
+            });
+        } catch (error) {
+            alert(error.message);
+        }
+    };
+
+    // Xử lý triển khai hợp đồng thông minh
+    document.getElementById('contractForm').onsubmit = async (e) => {
+        e.preventDefault();
+        const contractAddress = document.getElementById('contractAddress').value;
+        const creatorId = document.getElementById('creatorId').value;
+        const sourceCode = document.getElementById('sourceCode').value;
+
+        try {
+            const response = await fetch('/api/smart-contracts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ contractAddress, creatorId, sourceCode })
+            });
+
+            if (!response.ok) throw new Error('Failed to deploy the smart contract');
+
+            const data = await response.json();
+            alert(data.message);
+        } catch (error) {
+            alert(error.message);
+        }
+    };
+
+    // Xử lý ghi log
+    document .getElementById('logForm').onsubmit = async (e) => {
+        e.preventDefault();
+        const logLevel = document.getElementById('logLevel').value;
+        const logMessage = document.getElementById('logMessage').value;
+
+        try {
+            const response = await fetch('/api/logs', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ level: logLevel, message: logMessage })
+            });
+
+            if (!response.ok) throw new Error('Failed to log the message');
+
+            const data = await response.json();
+            alert(data.message);
+        } catch (error) {
+            alert(error.message);
+        }
+    };
+</script>
+</body>
+</html>

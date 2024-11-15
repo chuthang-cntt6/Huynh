@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login - Private Blockchain</title>
+    <link rel="stylesheet" href="member.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h1>Login to Your Account</h1>
+            </div>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="loginUsername"><i class="fas fa-user"></i> Username</label>
+                    <input type="text" id="loginUsername" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="loginPassword"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+
+                <div class="remember-me">
+                    <label><input type="checkbox" id="rememberMe"> Remember me</label>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">Login</button>
+                <div class="error-message" id="errorMessage"></div>
+
+                <div class="loading" id="loading"></div>
+            </form>
+
+            <div class="login-footer">
+                <p class="signup-prompt">Don't have an account? <a href="register.html" class="signup-link">Sign up</a></p>
+                <button onclick="window.location.href='index.html'" class="btn-back">Back to Home</button>
+                <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+
+            // Show loading spinner
+            loading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            const response = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            const data = await response.json();
+            const errorMessageElement = document.getElementById('errorMessage');
+
+            // Hide loading spinner
+            loading.style.display = 'none';
+            submitBtn.disabled = false;
+
+            if (response.ok) {
+                localStorage.setItem('username', username);
+                if (rememberMe) {
+                    // Optional: Save additional info for "Remember Me"
+                }
+                window.location.href = 'index.html';
+            } else {
+                errorMessageElement.innerText = data.message;
+                errorMessageElement.style.display = 'block';
+                errorMessageElement.classList.add('shake'); // Added shake effect
+            }
+        };
+    </script>
+</body>
+</html>
